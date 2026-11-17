@@ -30,5 +30,16 @@ export const useAnecdotes = () => {
     })();
   }, []);
 
-  return anecdotes;
+  const addAnecdote = async (anecdote) => {
+    const anecdoteToAdd = {
+      ...anecdote,
+      votes: 0,
+      id: Math.round(Math.random() * 10000),
+    };
+
+    await anecdoteService.createNew(anecdoteToAdd);
+    setAnecdotes(anecdotes.concat(anecdoteToAdd));
+  };
+
+  return { anecdotes, addAnecdote };
 };
