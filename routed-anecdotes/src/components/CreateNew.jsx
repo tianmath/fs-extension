@@ -31,15 +31,15 @@ const CreateNew = ({ addAnecdote }) => {
       <form onSubmit={handleSubmit}>
         <div>
           content
-          <input {...content} name='content' />
+          <input {...content} reset='' name='content' />
         </div>
         <div>
           author
-          <input {...author} name='author' />
+          <input {...author} reset='' name='author' />
         </div>
         <div>
           url for more info
-          <input {...info} name='info' />
+          <input {...info} reset='' name='info' />
         </div>
         <button type='submit'>create</button>
         <button onClick={handleReset}>reset</button>
